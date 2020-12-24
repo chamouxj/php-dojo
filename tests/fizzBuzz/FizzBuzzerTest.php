@@ -18,7 +18,7 @@ class FizzBuzzerTest extends TestCase
     public function testIsInvokable()
     {
         $testedInstance = new FizzBuzzer();
-        $output = $testedInstance();
+        $testedInstance();
 
         self::assertTrue(true);
     }
