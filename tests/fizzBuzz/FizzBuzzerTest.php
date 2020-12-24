@@ -39,19 +39,24 @@ class FizzBuzzerTest extends TestCase
         self::assertCount(100, explode(PHP_EOL, $output));
     }
 
-    /** @testdox class outputs numeric strings or Fizz instead of 3 */
+    /** @testdox class outputs numeric strings or Fizz instead of multiples of 3 */
     public function testOutputsNumericStringsOrFizz()
     {
         $testedInstance = new FizzBuzzer();
         $output = $testedInstance();
         $stringAsArray = explode(PHP_EOL, $output);
+        $testIndexesForThree = [3,6,9,12,15,18,21,24,27,30];
         foreach ($stringAsArray as $index => $value) {
-            if ($index === 2) {
+            if (++$index > end($testIndexesForThree)) {
+                break;
+            }
+
+            if (in_array($index, $testIndexesForThree)) {
                 self::assertEquals('Fizz', $value);
                 continue;
             }
+
             self::assertIsNumeric($value);
         }
     }
-
 }
