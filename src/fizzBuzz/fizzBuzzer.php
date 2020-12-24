@@ -9,7 +9,7 @@ class fizzBuzzer
         $output = null;
 
         for ($i = 1; $i <= 100; $i++) {
-            if ($i === 3) {
+            if ($i % 3 === 0) {
                 $output .= 'Fizz';
             } else {
                 $output .= (string) $i;
