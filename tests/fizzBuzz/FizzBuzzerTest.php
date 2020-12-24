@@ -7,9 +7,19 @@ use vdebes\phpdojo\fizzBuzz\fizzBuzzer;
 
 class FizzBuzzerTest extends TestCase
 {
+    /** @testdox test class is instanciable */
     public function testIsInstanciable()
     {
         $testedInstance = new FizzBuzzer();
         self::assertIsObject($testedInstance);
+    }
+
+    /** @testdox test class is invokable */
+    public function testIsInvokable()
+    {
+        $testedInstance = new FizzBuzzer();
+        $output = $testedInstance();
+
+        self::assertTrue(true);
     }
 }
