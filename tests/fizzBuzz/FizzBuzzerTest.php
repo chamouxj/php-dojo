@@ -40,7 +40,7 @@ class FizzBuzzerTest extends TestCase
     }
 
     /** @testdox class outputs numeric strings or Fizz instead of 3 */
-    public function testOutputsNumericStringsOrFizzOrBuzz()
+    public function testOutputsNumericStringsOrFizz()
     {
         $testedInstance = new FizzBuzzer();
         $output = $testedInstance();
@@ -53,4 +53,5 @@ class FizzBuzzerTest extends TestCase
             self::assertIsNumeric($value);
         }
     }
+
 }

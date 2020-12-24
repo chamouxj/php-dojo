@@ -9,7 +9,11 @@ class fizzBuzzer
         $output = null;
 
         for ($i = 1; $i <= 100; $i++) {
-            $output .= (string) $i;
+            if ($i === 3) {
+                $output .= 'Fizz';
+            } else {
+                $output .= (string) $i;
+            }
             if ($i !== 100) {
                 $output .= PHP_EOL;
             }
