@@ -4,8 +4,17 @@ namespace vdebes\phpdojo\fizzBuzz;
 
 class fizzBuzzer
 {
-    public function __invoke()
+    public function __invoke(): string
     {
-        return '';
+        $output = null;
+
+        for ($i = 1; $i <= 100; $i++) {
+            $output .= (string) $i;
+            if ($i !== 100) {
+                $output .= PHP_EOL;
+            }
+        }
+
+        return $output;
     }
 }
