@@ -7,14 +7,14 @@ use vdebes\phpdojo\fizzBuzz\fizzBuzzer;
 
 class FizzBuzzerTest extends TestCase
 {
-    /** @testdox test class is instanciable */
+    /** @testdox class is instanciable */
     public function testIsInstanciable()
     {
         $testedInstance = new FizzBuzzer();
         self::assertIsObject($testedInstance);
     }
 
-    /** @testdox test class is invokable */
+    /** @testdox class is invokable */
     public function testIsInvokable()
     {
         $testedInstance = new FizzBuzzer();
@@ -23,14 +23,14 @@ class FizzBuzzerTest extends TestCase
         self::assertTrue(true);
     }
 
-    /** @testdox test class outputs string */
+    /** @testdox class outputs string */
     public function testOutputsString()
     {
         $testedInstance = new FizzBuzzer();
         self::assertIsString($testedInstance());
     }
 
-    /** @testdox test class outputs 100 strings separated by a new line character */
+    /** @testdox class outputs 100 strings separated by a new line character */
     public function testOutputs100Strings()
     {
         $testedInstance = new FizzBuzzer();
