@@ -22,4 +22,11 @@ class FizzBuzzerTest extends TestCase
 
         self::assertTrue(true);
     }
+
+    /** @testdox test class outputs strings */
+    public function testOutputsString()
+    {
+        $testedInstance = new FizzBuzzer();
+        self::assertIsString($testedInstance());
+    }
 }
