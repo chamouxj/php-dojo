@@ -8,8 +8,8 @@ use vdebes\phpdojo\fizzBuzz\fizzBuzzer;
 class FizzBuzzerTest extends TestCase
 {
     private array $testIndexesForThree = [3,6,9,12,15,18,21,24,27,30];
-    private array $testIndexesForFive = [5,10,15,20,25,30];
-    private array $testIndexesForThreeAndFive;
+    private array $testIndexesForFive = [5,10,20,25];
+    private array $testIndexesForThreeAndFive = [15];
 
     /** @testdox class is instanciable */
     public function testIsInstanciable()
@@ -59,7 +59,7 @@ class FizzBuzzerTest extends TestCase
                 continue;
             }
 
-            if (!in_array($index, $this->testIndexesForFive)) {
+            if (!in_array($index, $this->testIndexesForFive) && !in_array($index, $this->testIndexesForThreeAndFive)) {
                 self::assertIsNumeric($value);
             }
         }
@@ -81,7 +81,7 @@ class FizzBuzzerTest extends TestCase
                 continue;
             }
 
-            if (!in_array($index, $this->testIndexesForThree)) {
+            if (!in_array($index, $this->testIndexesForThree) && !in_array($index, $this->testIndexesForThreeAndFive)) {
                 self::assertIsNumeric($value);
             }
         }
