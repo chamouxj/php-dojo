@@ -9,7 +9,7 @@ class FizzBuzzerTest extends TestCase
 {
     private array $testIndexesForThree = [3,6,9,12,18,21,24,27];
     private array $testIndexesForFive = [5,10,20,25];
-    private array $testIndexesForThreeAndFive = [15];
+    private array $testIndexesForThreeAndFive = [15, 30];
 
     /** @testdox class is instanciable */
     public function testIsInstanciable()
@@ -82,6 +82,28 @@ class FizzBuzzerTest extends TestCase
             }
 
             if (!in_array($index, $this->testIndexesForThree) && !in_array($index, $this->testIndexesForThreeAndFive)) {
+                self::assertIsNumeric($value);
+            }
+        }
+    }
+
+    /** @testdox class outputs numeric strings or FizzBuzz instead of multiples of 3 and 5 */
+    public function testOutputsNumericStringsOrFizzBuzz()
+    {
+        $testedInstance = new FizzBuzzer();
+        $output = $testedInstance();
+        $stringAsArray = explode(PHP_EOL, $output);
+        foreach ($stringAsArray as $index => $value) {
+            if (++$index > end($this->testIndexesForThreeAndFive)) {
+                break;
+            }
+
+            if (in_array($index, $this->testIndexesForThreeAndFive)) {
+                self::assertEquals('FizzBuzz', $value);
+                continue;
+            }
+
+            if (!in_array($index, array_merge($this->testIndexesForThree, $this->testIndexesForFive, $this->testIndexesForThreeAndFive))) {
                 self::assertIsNumeric($value);
             }
         }
