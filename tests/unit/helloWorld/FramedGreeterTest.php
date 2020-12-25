@@ -3,6 +3,7 @@
 namespace phpdojo\tests\unit\helloWorld;
 
 use PHPUnit\Framework\TestCase;
+use vdebes\phpdojo\helloWorld\FramedGreeter;
 
 class FramedGreeterTest extends TestCase
 {
