@@ -40,4 +40,20 @@ class GreeterTest extends TestCase
 
         self::assertSame('Hello, World!', $output);
     }
+
+    /**
+     * @testdox Greeter invocation returns a string which is "Hello, World!"
+     *
+     * This test validates all the previous ones in one pass. This kata could also have been done starting with this
+     * only test and amending it iteration after iteration until the specifications were met.
+     */
+    public function testGreeter(): void
+    {
+        $testedInstance = new Greeter();
+
+        $output = $testedInstance();
+
+        self::assertIsString($output);
+        self::assertSame('Hello, World!', $output);
+    }
 }
