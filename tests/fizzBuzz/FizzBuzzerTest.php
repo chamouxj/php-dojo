@@ -7,6 +7,10 @@ use vdebes\phpdojo\fizzBuzz\fizzBuzzer;
 
 class FizzBuzzerTest extends TestCase
 {
+    private array $testIndexesForThree = [3,6,9,12,15,18,21,24,27,30];
+    private array $testIndexesForFive = [5];
+    private array $testIndexesForThreeAndFive;
+
     /** @testdox class is instanciable */
     public function testIsInstanciable()
     {
@@ -45,18 +49,19 @@ class FizzBuzzerTest extends TestCase
         $testedInstance = new FizzBuzzer();
         $output = $testedInstance();
         $stringAsArray = explode(PHP_EOL, $output);
-        $testIndexesForThree = [3,6,9,12,15,18,21,24,27,30];
         foreach ($stringAsArray as $index => $value) {
-            if (++$index > end($testIndexesForThree)) {
+            if (++$index > end($this->testIndexesForThree)) {
                 break;
             }
 
-            if (in_array($index, $testIndexesForThree)) {
+            if (in_array($index, $this->testIndexesForThree)) {
                 self::assertEquals('Fizz', $value);
                 continue;
             }
 
-            self::assertIsNumeric($value);
+            if (!in_array($index, $this->testIndexesForFive)) {
+                self::assertIsNumeric($value);
+            }
         }
     }
 
@@ -66,18 +71,19 @@ class FizzBuzzerTest extends TestCase
         $testedInstance = new FizzBuzzer();
         $output = $testedInstance();
         $stringAsArray = explode(PHP_EOL, $output);
-        $testIndexesForThree = [5];
         foreach ($stringAsArray as $index => $value) {
-            if (++$index > end($testIndexesForThree)) {
+            if (++$index > end($this->testIndexesForFive)) {
                 break;
             }
 
-            if (in_array($index, $testIndexesForThree)) {
+            if (in_array($index, $this->testIndexesForFive)) {
                 self::assertEquals('Buzz', $value);
                 continue;
             }
 
-            self::assertIsNumeric($value);
+            if (!in_array($index, $this->testIndexesForThree)) {
+                self::assertIsNumeric($value);
+            }
         }
     }
 }
