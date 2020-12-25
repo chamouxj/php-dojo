@@ -4,6 +4,7 @@ namespace phpdojo\tests\unit\helloWorld;
 
 use PHPUnit\Framework\TestCase;
 use vdebes\phpdojo\helloWorld\FramedGreeter;
+use vdebes\phpdojo\helloWorld\Greet;
 
 class FramedGreeterTest extends TestCase
 {
@@ -17,5 +18,6 @@ class FramedGreeterTest extends TestCase
         $testedInstance = new FramedGreeter();
 
         self::assertIsObject($testedInstance);
+        self::assertInstanceOf(Greet::class, $testedInstance);
     }
 }
