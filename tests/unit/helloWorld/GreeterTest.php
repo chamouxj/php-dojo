@@ -22,4 +22,13 @@ class GreeterTest extends TestCase
 
         self::assertNotNull($testedInstance);
     }
+
+    /** class invocation returns a string */
+    public function testReturnsString(): void
+    {
+        $testedInstance = new Greeter();
+        $output = $testedInstance();
+
+        self::assertIsString($output);
+    }
 }
