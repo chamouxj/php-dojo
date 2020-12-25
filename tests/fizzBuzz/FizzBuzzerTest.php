@@ -3,11 +3,11 @@
 namespace phpdojo\tests\fizzBuzz;
 
 use PHPUnit\Framework\TestCase;
-use vdebes\phpdojo\fizzBuzz\fizzBuzzer;
+use vdebes\phpdojo\fizzBuzz\FizzBuzzer;
 
 class FizzBuzzerTest extends TestCase
 {
-    private array $testIndexesForThree = [3,6,9,12,15,18,21,24,27,30];
+    private array $testIndexesForThree = [3,6,9,12,18,21,24,27];
     private array $testIndexesForFive = [5,10,20,25];
     private array $testIndexesForThreeAndFive = [15];
 
