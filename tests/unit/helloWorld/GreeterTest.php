@@ -13,4 +13,13 @@ class GreeterTest extends TestCase
         $testedInstance = new Greeter();
         self::assertIsObject($testedInstance);
     }
+
+    /** @testdox class is invokable */
+    public function testIsInvokable(): void
+    {
+        $testedInstance = new Greeter();
+        $testedInstance();
+
+        self::assertNotNull($testedInstance);
+    }
 }
