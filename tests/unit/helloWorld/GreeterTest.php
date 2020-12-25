@@ -7,14 +7,18 @@ use vdebes\phpdojo\helloWorld\Greeter;
 
 class GreeterTest extends TestCase
 {
-    /** @testdox class is instantiable */
+    /**
+     * @testdox class is instantiable
+     */
     public function testIsInstiable(): void
     {
         $testedInstance = new Greeter();
         self::assertIsObject($testedInstance);
     }
 
-    /** @testdox class is invokable */
+    /**
+     * @testdox class is invokable
+     */
     public function testIsInvokable(): void
     {
         $testedInstance = new Greeter();
@@ -23,20 +27,24 @@ class GreeterTest extends TestCase
         self::assertNotNull($testedInstance);
     }
 
-    /** class invocation returns a string */
+    /**
+     * class invocation returns a string
+     */
     public function testReturnsString(): void
     {
         $testedInstance = new Greeter();
-        $output = $testedInstance();
+        $output         = $testedInstance();
 
         self::assertIsString($output);
     }
 
-    /** class invocation returns a "Hello, World!" string */
+    /**
+     * class invocation returns a "Hello, World!" string
+     */
     public function testReturnsHelloWorldString(): void
     {
         $testedInstance = new Greeter();
-        $output = $testedInstance();
+        $output         = $testedInstance();
 
         self::assertSame('Hello, World!', $output);
     }
