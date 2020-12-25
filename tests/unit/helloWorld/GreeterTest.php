@@ -3,6 +3,7 @@
 namespace phpdojo\tests\unit\helloWorld;
 
 use PHPStan\Testing\TestCase;
+use vdebes\phpdojo\helloWorld\Greeter;
 
 class GreeterTest extends TestCase
 {
@@ -10,5 +11,6 @@ class GreeterTest extends TestCase
     public function testIsInstiable(): void
     {
         $testedInstance = new Greeter();
+        self::assertIsObject($testedInstance);
     }
 }
