@@ -31,4 +31,13 @@ class GreeterTest extends TestCase
 
         self::assertIsString($output);
     }
+
+    /** class invocation returns a "Hello, World!" string */
+    public function testReturnsHelloWorldString(): void
+    {
+        $testedInstance = new Greeter();
+        $output = $testedInstance();
+
+        self::assertSame('Hello, World!', $output);
+    }
 }
