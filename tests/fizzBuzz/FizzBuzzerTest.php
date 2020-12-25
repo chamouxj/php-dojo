@@ -59,4 +59,25 @@ class FizzBuzzerTest extends TestCase
             self::assertIsNumeric($value);
         }
     }
+
+    /** @testdox class outputs numeric strings or Buzz instead of multiples of 5 */
+    public function testOutputsNumericStringsOrBuzz()
+    {
+        $testedInstance = new FizzBuzzer();
+        $output = $testedInstance();
+        $stringAsArray = explode(PHP_EOL, $output);
+        $testIndexesForThree = [5];
+        foreach ($stringAsArray as $index => $value) {
+            if (++$index > end($testIndexesForThree)) {
+                break;
+            }
+
+            if (in_array($index, $testIndexesForThree)) {
+                self::assertEquals('Buzz', $value);
+                continue;
+            }
+
+            self::assertIsNumeric($value);
+        }
+    }
 }
